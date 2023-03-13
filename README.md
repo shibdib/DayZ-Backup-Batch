@@ -20,8 +20,4 @@ NOTE - This is recommended to be run while the server is NOT running. So time it
 
 Released by DonkeyPunch Community Gaming for DayZ SA community use
 
-The original was from DayZ Epoch Arma 2
-
-Modified for use with Arma 3 Epoch Redis DB and Exile MySQL
-
-Modified again by Shibdib in 2023 making it a lot easier to use
+Modified by Shibdib in 2023 making it a lot easier to use
