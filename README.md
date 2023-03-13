@@ -2,7 +2,7 @@
 
 A batch file that will backup your DayZ SA server. 
 
-##Directions
+## Directions
 - Fill in the "dayzserverfolder", "dayzbackuppath", "profilename", and "instanceId"
 - Set the number of days you want to keep backups using the "backupAge" setting
 - "deloriglogs" will clean up your profile folder of old logs
