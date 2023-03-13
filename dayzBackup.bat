@@ -1,8 +1,5 @@
 @echo off
 
-set mydate=%date:~10,4%%date:~6,2%/%date:~4,2%
-set logFile="C:\Users\Alt Account\Documents\scripts\DayZ_Server_Log.txt"
-
 echo "--- %mydate% --- %time% --- SERVER BACKUP ---" >> %logFile%
 :: Released by DonkeyPunch Community Gaming for DayZ SA community use
 :: The original was from DayZ Epoch Arma 2
@@ -89,5 +86,4 @@ del "%dayzserverfolder%\mpmissions\dayzOffline.chernarusplus\storage_%instanceId
 forfiles /p %dayzbackuppath% /d -%backupAge% /c "cmd /c if @isdir==TRUE rmdir @file /s /q"
 
 :: Done
-echo "Backup Succesful" >> %logFile%
 exit
