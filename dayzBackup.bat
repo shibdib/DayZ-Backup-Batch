@@ -1,5 +1,9 @@
 @echo off
 
+set mydate=%date:~10,4%%date:~6,2%/%date:~4,2%
+set logFile="C:\Users\Alt Account\Documents\scripts\DayZ_Server_Log.txt"
+
+echo "--- %mydate% --- %time% --- SERVER BACKUP ---" >> %logFile%
 :: Released by DonkeyPunch Community Gaming for DayZ SA community use
 :: The original was from DayZ Epoch Arma 2
 :: Modified for use with Arma 3 Epoch Redis DB and Exile MySQL
@@ -58,20 +62,20 @@ copy "%dayzserverfolder%\mpmissions\dayzOffline.chernarusplus\storage_%instanceI
 copy "%dayzserverfolder%\mpmissions\dayzOffline.chernarusplus\storage_%instanceId%\data\events.bin" "%dayzbackuppath%\%profilename%\%dtStamp%\events.bin"
 copy "%dayzserverfolder%\mpmissions\dayzOffline.chernarusplus\storage_%instanceId%\data\types.bin" "%dayzbackuppath%\%profilename%\%dtStamp%\types.bin"
 copy "%dayzserverfolder%\mpmissions\dayzOffline.chernarusplus\storage_%instanceId%\data\vehicles.bin" "%dayzbackuppath%\%profilename%\%dtStamp%\vehicles.bin"
-copy "%dayzserverfolder%\%srvprofilename%\script.log" "%dayzbackuppath%\%profilename%\%dtStamp%\script.log"
-copy "%dayzserverfolder%\%srvprofilename%\crash.log" "%dayzbackuppath%\%profilename%\%dtStamp%\crash.log"
-copy "%dayzserverfolder%\%srvprofilename%\serverconsole.log" "%dayzbackuppath%\%profilename%\%dtStamp%\serverconsole.log"
-copy "%dayzserverfolder%\%srvprofilename%\DayZServer_x64.ADM" "%dayzbackuppath%\%profilename%\%dtStamp%\DayZServer_x64.ADM"
-copy "%dayzserverfolder%\%srvprofilename%\DayZServer_x64*.rpt" "%dayzbackuppath%\%profilename%\%dtStamp%\DayZServer_x64*.rpt"
+copy "%dayzserverfolder%\%profilename%\script.log" "%dayzbackuppath%\%profilename%\%dtStamp%\script.log"
+copy "%dayzserverfolder%\%profilename%\crash.log" "%dayzbackuppath%\%profilename%\%dtStamp%\crash.log"
+copy "%dayzserverfolder%\%profilename%\serverconsole.log" "%dayzbackuppath%\%profilename%\%dtStamp%\serverconsole.log"
+copy "%dayzserverfolder%\%profilename%\DayZServer_x64.ADM" "%dayzbackuppath%\%profilename%\%dtStamp%\DayZServer_x64.ADM"
+copy "%dayzserverfolder%\%profilename%\DayZServer_x64*.rpt" "%dayzbackuppath%\%profilename%\%dtStamp%\DayZServer_x64*.rpt"
 
 :: This is for deleting the original logs in the profile folder
 :deloriglogs
 if %deloriglogs% == 1 (
-del "%dayzserverfolder%\%srvprofilename%\script*.log"
-del "%dayzserverfolder%\%srvprofilename%\crash*.log"
-del "%dayzserverfolder%\%srvprofilename%\serverconsole.log"
-del "%dayzserverfolder%\%srvprofilename%\DayZServer_x64.ADM"
-del "%dayzserverfolder%\%srvprofilename%\DayZServer_x64*.rpt"
+del "%dayzserverfolder%\%profilename%\script*.log"
+del "%dayzserverfolder%\%profilename%\crash*.log"
+del "%dayzserverfolder%\%profilename%\serverconsole.log"
+del "%dayzserverfolder%\%profilename%\DayZServer_x64.ADM"
+del "%dayzserverfolder%\%profilename%\DayZServer_x64*.rpt"
 )
 
 :: This is for servers that want to have freshly made dynamic loot every restart
@@ -85,4 +89,5 @@ del "%dayzserverfolder%\mpmissions\dayzOffline.chernarusplus\storage_%instanceId
 Fforfiles /p %dayzbackuppath% /d -%backupAge% /c "cmd /c if @isdir==TRUE rmdir @file /s /q"
 
 :: Done
+echo "Backup Succesful" >> %logFile%
 exit
