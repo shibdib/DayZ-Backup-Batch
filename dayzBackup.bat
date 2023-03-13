@@ -86,7 +86,7 @@ del "%dayzserverfolder%\mpmissions\dayzOffline.chernarusplus\storage_%instanceId
 
 :: Clean the backups folder
 :deloldbackups
-Fforfiles /p %dayzbackuppath% /d -%backupAge% /c "cmd /c if @isdir==TRUE rmdir @file /s /q"
+forfiles /p %dayzbackuppath% /d -%backupAge% /c "cmd /c if @isdir==TRUE rmdir @file /s /q"
 
 :: Done
 echo "Backup Succesful" >> %logFile%
