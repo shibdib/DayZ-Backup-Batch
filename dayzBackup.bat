@@ -2,10 +2,7 @@
 
 echo "--- %mydate% --- %time% --- SERVER BACKUP ---" >> %logFile%
 :: Released by DonkeyPunch Community Gaming for DayZ SA community use
-:: The original was from DayZ Epoch Arma 2
-:: Modified for use with Arma 3 Epoch Redis DB and Exile MySQL
-:: Now utilized for DayZ StandAlone
-:: Modified again by Shibdib in 2023 making it a lot easier to use
+:: Modified by Shibdib in 2023 making it a lot easier to use
 
 :::::::::::::: CONFIG ::::::::::::::::::
 
