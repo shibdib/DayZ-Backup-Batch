@@ -1,6 +1,5 @@
 @echo off
 
-echo "--- %mydate% --- %time% --- SERVER BACKUP ---" >> %logFile%
 :: Released by DonkeyPunch Community Gaming for DayZ SA community use
 :: Modified by Shibdib in 2023 making it a lot easier to use
 
